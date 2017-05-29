@@ -1,9 +1,3 @@
-#topic_text {
-  background: #fff;
-  border-radius: 10px;
-  margin-top: 50px;
-}
-
 #topic_list {
   margin-top: 50px;
 }
@@ -14,15 +8,12 @@
 
 #topic {
   width: 95%;
-  border-bottom: 1px solid #ccc;
-  background: #fff;
+  height: 100%;
+  border: 1px solid #ccc;
+  background-color: #fff;
   padding: 40px;
   text-align: left;
   word-wrap: break-word;
-}
-
-#button {
-  float:right;
 }
 
 #error_explanation {
@@ -32,8 +23,25 @@
   }
 }
 
+#filechose {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#button {
+  float:right;
+}
+
+
+.image img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  border-style: none;
+}
+
 .profileimage img {
-  border-radius: 90%;
+  border-radius: 50%;
   height: 40px;
   width: 40px;
 }

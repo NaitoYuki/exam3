@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
             message: 'あなたのトピックにコメントが付きました'
           })
         end
-        Pusher.trigger("user_#{@comment.blog.user_id}_channel", 'notification_created', {
+        Pusher.trigger("user_#{@comment.topic.user_id}_channel", 'notification_created', {
           unread_counts: Notification.where(user_id: @comment.topic.user.id, read: false).count
         })
       else

@@ -41,6 +41,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
             <% if user_signed_in? %>
+              <li><%= link_to "トピックス", topics_path %></li>
               <li><%= link_to "メッセージ", conversations_path %></li>
               <li><%= link_to 'マイページ', edit_user_registration_path %></li>
               <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
@@ -59,6 +60,9 @@
 
   <% if notice %>
 　　<p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+　　<p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
   <%= yield %>

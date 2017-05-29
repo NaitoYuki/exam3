@@ -4,10 +4,6 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.order(:created_at).reverse_order
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def new
@@ -28,14 +24,14 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
     if @topic.save
       redirect_to topics_path, notice: "トピックを作成しました！"
-      NoticeMailer.sendmail_topic(@topic).deliver
+      # NoticeMailer.sendmail_topic(@topic).deliver
     else
       render 'new'
     end
   end
 
   def edit
-　end
+  end
 
   def update
     if @topic.update(topics_params)

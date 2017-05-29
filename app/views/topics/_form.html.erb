@@ -1,3 +1,4 @@
+<h2>トピックの投稿</h2>
 <%= form_for(@topic, url: choose_new_or_edit) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
@@ -9,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  </br>
+  </br>
+  <%= f.label :タイトル %>
+  <%= f.text_field :title, class: 'form-control' %>
   <br>
-  <%= f.label :content %>
-  <%= f.text_field :content %>
+  <%= f.label :内容 %>
+  <%= f.text_field :content, class: 'form-control' %>
   <br>
-  <%= f.submit %>
+  </br>
+  <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 <% end %>
-
-<%= link_to "トピック一覧画面にもどる", topics_path %>
