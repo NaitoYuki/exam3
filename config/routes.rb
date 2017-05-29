@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   get 'notifications/index'
 
-  get 'comments/create'
-
   root 'top#index'
 
   resources :topics do

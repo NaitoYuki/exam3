@@ -1,3 +1,39 @@
-// Place all the styles related to the topics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#topic_text {
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+#topic_list {
+  margin-top: 50px;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+#topic {
+  width: 95%;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  padding: 40px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+#button {
+  float:right;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    margin: 0 0 18px 0;
+  }
+}
+
+.profileimage img {
+  border-radius: 90%;
+  height: 40px;
+  width: 40px;
+}

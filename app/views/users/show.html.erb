@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-1 col-md-4 col-sm-4">
+      <div class="follow">
+        <h3>ユーザー情報</h3>
+        <div class="profileimage">
+          <%= profile_img(@user) %>
+        </div>
+        <p><%= @user.name %></p>
+        </br>
+        <h4>投稿したトピック</h4>
+        <% @user.topics.each do |topic| %>
+          <p><%= link_to topic.title, topic_path(topic.id) %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-3  col-md-4 col-sm-4">
+      <div class="follow">
+        <h3>フォローした人</h3>
+        <% unless @user.followed_users.count == 0 %>
+          <% @user.followed_users.each do |followed_user| %>
+            <div class="profileimage">
+              <%= profile_img(followed_user) %>
+            </div>
+            <%= link_to followed_user.name, user_path(followed_user.id) %>
+          <% end %>
+        <% else %>
+            <p>Not following anyone.</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
+      <div class="follow">
+        <h3>フォローされた人</h3>
+        <% unless @user.followers.count == 0 %>
+          <% @user.followers.each do |follower| %>
+            <div class="profileimage">
+              <%= profile_img(follower) %>
+            </div>
+            <%= link_to follower.name, user_path(follower.id) %>
+          <% end %>
+        <% else %>
+            <p>No followers.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <p><%= link_to '戻る', :back, class: 'btn btn-default btn-sm btn-success'  %></p>
+</div>

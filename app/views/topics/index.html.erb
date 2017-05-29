@@ -1,3 +1,17 @@
-<h2>トピックを作成する</h2>
-
-<%= render 'form' %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <h1>トピック一覧</h1>
+    <%= link_to "トピックを作成する", new_topic_path, class: 'btn btn-default' %>
+    <% @topics.each do |topic| %>
+      <div class="row">
+        <%= link_to topic_path(topic) do %>
+          <h4><strong><%= topic.title %></strong></h4>
+        <% end %>
+        <p><%= topic.content %></p>
+        <%= link_to '', edit_topic_path(topic.id), class: 'fa fa-pencil-square-o fa-lg' %>
+        <%= link_to '', topic_path(topic.id), class: 'fa fa-trash-o fa-lg', method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+      </div>
+    <% end %>
+  </div>
+</div>

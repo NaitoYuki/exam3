@@ -1,5 +1,8 @@
-<h1>NoticeMailer#sendmail_blog</h1>
+<h1>新しいTopicが投稿されました！</h1>
+
+<h4>title: <%= @topic.title %></h4>
+<p>content: <%= @topic.content %></p>
 
 <p>
-  <%= @greeting %>, find me in app/views/notice_mailer/sendmail_blog.html.erb
+  <%= link_to '投稿されたトピックはこちら', topics_url %>
 </p>

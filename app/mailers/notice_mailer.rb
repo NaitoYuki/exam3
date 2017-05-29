@@ -6,8 +6,9 @@ class NoticeMailer < ApplicationMailer
   #   en.notice_mailer.sendmail_topic.subject
   #
   def sendmail_topic(topic)
-    @greeting = "Hi"
+    @topic = topic
 
-    mail to: "to@example.org"
+    mail to: @topic.user.email,
+      subject: '投稿ありがとうございました！'
   end
 end
