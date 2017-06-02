@@ -6,11 +6,12 @@
         <div class="profileimage">
           <%= profile_img(user) %>
         </div>
-            <div class="item">
-              <%= link_to user.name, user %>
-              <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-              <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
-            </div>
+          <div class="item">
+            <%= link_to user.name, user %>
+            <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+            <%= render partial: 'follow_form', locals: { user: user } if signed_in?   %>
+          </div>
+      </div>
     <% end %>
   <% end %>
 </div>
